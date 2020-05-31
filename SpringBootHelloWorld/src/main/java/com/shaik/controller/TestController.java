@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.shaik.model.Employee;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -39,11 +36,21 @@ public class TestController {
         tempEmployees.add(emp2);
         return tempEmployees;
     }
-    @RequestMapping(value = "/addemployee", method = RequestMethod.POST, consumes = "application/json" , produces = "application/json")
-    public List<Employee>  addEmployee(Employee employee) {
+    @PostMapping(value = "/addemployee",  consumes = "application/json")
+    public List<Employee>  addEmployee(@RequestBody  Employee employee) {
  System.out.println("Inside add employee method "+ employee.getDesignation());
-        List<Employee> tempEmployees = new ArrayList<>();
-        tempEmployees.add(employee);
-        return tempEmployees;
+        employees.add(employee);
+        return employees;
+    }
+    @DeleteMapping(path ={"/{id}"})
+    public List<Employee>  delete(@PathVariable("id") int empId) {
+        System.out.println("Inside delete employee method "+ empId);
+        for (Employee emp : employees) {
+            if (emp.getEmpId().equals(empId)) {
+                employees.remove(emp);
+            }
+        }
+        System.out.println(employees);
+return employees;
     }
 }
