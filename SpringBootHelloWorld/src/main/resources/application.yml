@@ -1,0 +1,14 @@
+
+server:
+  port: 9080
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  main:
+    banner-mode: CONSOLE
+  banner:
+    location: banner.txt
+  application:
+    name: SpringBootHelloWorld
+
