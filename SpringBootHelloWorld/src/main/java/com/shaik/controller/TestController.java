@@ -16,6 +16,7 @@ import com.shaik.model.Employee;
 @RequestMapping("/SpringBootHW")
 
 
+
 public class TestController {
     private List<Employee> employees = createList();
     @RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
@@ -36,6 +37,13 @@ public class TestController {
         emp2.setSalary(3000);
         tempEmployees.add(emp1);
         tempEmployees.add(emp2);
+        return tempEmployees;
+    }
+    @RequestMapping(value = "/addemployee", method = RequestMethod.POST, consumes = "application/json" , produces = "application/json")
+    public List<Employee>  addEmployee(Employee employee) {
+ System.out.println("Inside add employee method "+ employee.getDesignation());
+        List<Employee> tempEmployees = new ArrayList<>();
+        tempEmployees.add(employee);
         return tempEmployees;
     }
 }
