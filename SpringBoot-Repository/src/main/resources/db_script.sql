@@ -1,0 +1,10 @@
+CREATE DATABASE `SpringDB` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=194093 DEFAULT CHARSET=latin1
