@@ -11,6 +11,12 @@ spring:
     username: root
     password: moin
     driver-class-name: com.mysql.jdbc.Driver
+  security:
+    user:
+     name: admin
+     password: moin
+     roles: manager
+
   jpa:
     show-sql: "true"
     hibernate:
