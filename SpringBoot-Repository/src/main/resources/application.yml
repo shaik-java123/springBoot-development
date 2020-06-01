@@ -1,0 +1,20 @@
+# Loco yaml export: Symfony YAML object
+# Project: application.properties conversion
+# Release: Working copy
+# Locale: en-IN, English (India)
+# Exported by: Shaik user
+# Exported at: Mon, 01 Jun 2020 13:06:16 +0530
+---
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/SpringDB
+    username: root
+    password: moin
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: "true"
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
